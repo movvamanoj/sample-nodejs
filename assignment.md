@@ -101,21 +101,22 @@
          kubectl describe role readonly-role
          kubectl get roles
          kubectl get roles -n <namespace_name>
-
+       ```
+       ```
          kubectl apply -f readonly-role-binding.yaml
          kubectl get rolebindings
          kubectl get rolebindings -n <namespace_name>
-
-
        ```
     - Explanation: Define Role and RoleBinding YAML files to create a read-only role with permissions to view resources. Apply these files to grant developers read-only access to the Kubernetes cluster.
 
 12. **Suggest other architectural components for high availability and reliability**:
-    - Explanation: Consider implementing components such as load balancers, multi-zone deployment, cluster autoscaling, service mesh (e.g., Istio), and backup and disaster recovery solutions to enhance the high availability and reliability of the Kubernetes cluster. These components improve fault tolerance, scalability, and resilience against failures.
+    - Explanation: Consider implementing components such as load balancers, multi-zone deployment, cluster autoscaling, service mesh, and backup and disaster recovery solutions to enhance the high availability and reliability of the Kubernetes cluster. These components improve fault tolerance, scalability, and resilience against failures.
 
 
-```
+
 **cmds**
+
+
 ```
 kubectl apply -f deployment.yml
 kubectl get pods
@@ -125,6 +126,8 @@ kubectl get pods
 kubectl apply -f service.yaml
 kubectl get services
 ```
+
+
 ```
 kubectl apply -f ingress.yaml
 kubectl get ingresses
@@ -144,26 +147,28 @@ kubectl get pods -n monitoring
 kubectl get deployments -n monitoring
 
 ```
+
 ```
 kubectl apply -f timeout-job.yaml
 kubectl describe job timeout-sample-nodejs-job
 ```
+
 ```
 kubectl get jobs
 kubectl describe job timeout-sample-nodejs-job
 ```
+
 ```
 kubectl apply -f readonly-role.yaml
 kubectl describe role readonly-role
 kubectl get roles
 kubectl get roles -n <namespace_name>
+```
 
 ```
 kubectl apply -f readonly-role-binding.yaml
 kubectl get rolebindings
 kubectl get rolebindings -n <namespace_name>
-
-
 ```
 
 ![Screenshot](https://github.com/movvamanoj/sample-nodejs/raw/main/Screenshot%202024-05-09%20195803.png)
