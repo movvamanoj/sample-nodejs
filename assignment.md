@@ -165,3 +165,5 @@ kubectl get rolebindings -n <namespace_name>
 
 
 ```
+
+![Screenshot](file:///./Screenshot%202024-05-09%20195803.png)
