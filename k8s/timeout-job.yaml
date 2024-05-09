@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: timeout-sample-nodejs-job
+spec:
+  activeDeadlineSeconds: 40  
+  template:
+    metadata:
+      name: timeout-sample-nodejs-pod
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: gpu
+                operator: In
+                values:
+                - "true"
+      containers:
+      - name: sample-nodejs-container
+        image: manojmovva/sample-nodejs:v1.0
+        command: ["node", "index.js"]  
+      restartPolicy: Never

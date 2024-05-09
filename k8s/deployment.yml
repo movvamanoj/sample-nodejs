@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-nodejs-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-nodejs
+  template:
+    metadata:
+      labels:
+        app: sample-nodejs
+    spec:
+      containers:
+      - name: sample-nodejs
+        image: manojmovva/sample-nodejs:v1.0
+        ports:
+        - containerPort: 3000
+
